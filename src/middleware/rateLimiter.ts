@@ -18,7 +18,7 @@ export const rateLimiterMiddleware = (req: Request, res: Response, next: NextFun
     return next();
   }
 
-  rateLimiter.consume(req.ip)
+  rateLimiter.consume(req.ip || 'unknown-ip')
     .then(() => {
       next();
     })
