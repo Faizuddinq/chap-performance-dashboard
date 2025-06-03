@@ -3,9 +3,9 @@ import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
 import { redisClient } from './config/redis';
-import { rateLimiter } from './middleware/rateLimiter';
-import { redisCache } from './middleware/redisCache';
-import { errorHandler } from './middleware/errorHandler';
+import rateLimiter from './middleware/rateLimiter';
+import {redisCache} from './middleware/redisCache';
+import {errorHandler} from './middleware/errorHandler';
 import chapterRoutes from './routes/chapter.routes';
 
 const app: Application = express();
